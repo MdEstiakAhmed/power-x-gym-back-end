@@ -4,7 +4,7 @@ module.exports = {
     getAll:function(callback){
         client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
         client.connect(err => {
-            const collection = client.db("power-x-gym").collection("test");
+            const collection = client.db("power-x-gym").collection("user");
             collection.find().toArray((err, documents)=>{
                 if(err){
                     callback(err);
@@ -15,5 +15,8 @@ module.exports = {
             });
             client.close();
         });
-	}
+    },
+    addUser:function(){
+        
+    }
 }
