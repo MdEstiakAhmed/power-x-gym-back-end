@@ -19,11 +19,22 @@ app.use(bodyParser.json());
 // var test = require('./controllers/testController/test');
 // test declaration end
 
-var test_data = require.main.require('./models/test');
+// var test_data = require.main.require('./models/test');
 
-app.get('/testData', function(request, response){
-    test_data.getAll(function(results){
-        response.send(results);
+app.get('/testData', (req, res) =>{
+    client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
+    client.connect(err => {
+        const collection = client.db("power-x-gym").collection("test");
+        collection.find().toArray((err, documents)=>{
+            if(err){
+                console.log(err)
+                res.status(500).send({message:err});
+            }
+            else{
+                res.send(documents);
+            }
+        });
+        client.close();
     });
 });
 
