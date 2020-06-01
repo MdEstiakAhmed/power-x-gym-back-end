@@ -2,13 +2,33 @@
 let express = require('express');
 let cors = require('cors');
 let bodyParser = require('body-parser');
-let mongoDBClient = require('mongodb').MongoClient;
+let MongoClient = require('mongodb').MongoClient;
 let dotEnv = require('dotenv').config();
 // declaration end
 
 // instance start
 let app = express();
 // instance end
+
+
+// test
+app.get('/datatest', (req, res) =>{
+    client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
+    client.connect(err => {
+        const collection = client.db("power-x-gym").collection("test");
+        collection.find().toArray((err, documents)=>{
+            if(err){
+                console.log(err)
+                res.status(500).send({message:err});
+            }
+            else{
+                res.send(documents);
+            }
+        });
+        client.close();
+    });
+});
+// test
 
 // project middleware start
 app.use(cors());
