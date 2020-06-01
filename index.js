@@ -3,45 +3,34 @@ let express = require('express');
 let cors = require('cors');
 let bodyParser = require('body-parser');
 let MongoClient = require('mongodb').MongoClient;
-let dotEnv = require('dotenv').config();
+require('dotenv').config();
 // declaration end
 
 // instance start
 let app = express();
 // instance end
 
-
-// test
-app.get('/datatest', (req, res) =>{
-    client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
-    client.connect(err => {
-        const collection = client.db("power-x-gym").collection("test");
-        collection.find().toArray((err, documents)=>{
-            if(err){
-                console.log(err)
-                res.status(500).send({message:err});
-            }
-            else{
-                res.send(documents);
-            }
-        });
-        client.close();
-    });
-});
-// test
-
 // project middleware start
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 // project middleware end
 
 // test declaration start
-var test = require('./controllers/testController/test');
+// var test = require('./controllers/testController/test');
 // test declaration end
 
+var test_data = require.main.require('./models/test');
+
+app.get('/testData', function(request, response){
+    test_data.getAll(function(results){
+        response.send(results);
+    });
+});
+
+
 // test middleware start
-app.use('/', test);
-app.use('/testData', test);
+// app.use('/', test);
+// app.use('/testData', test);
 // test middleware end
 
 //server setup start
