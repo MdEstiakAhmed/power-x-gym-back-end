@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.get('/testData', (req, res) =>{
     client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
     client.connect(err => {
-        const collection = client.db("power-x-gym").collection("test");
+        const collection = client.db("hospital").collection("test");
         collection.find().toArray((err, documents)=>{
             if(err){
                 console.log(err)
