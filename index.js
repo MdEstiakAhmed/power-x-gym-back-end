@@ -37,7 +37,8 @@ app.get('/testData', (req, res) =>{
 
 //server setup start
 var serverPort=3000;
-app.listen(serverPort, function(){
+const host = '0.0.0.0';
+app.listen(process.env.PORT || 5000, function(){
     console.log("project server started at: ", serverPort);
 });
 // server setup end
