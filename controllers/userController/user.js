@@ -12,4 +12,10 @@ router.get('/getAllUser', function(request, response){
     });
 });
 
+router.get('/getUser/:key', function(request, response){
+    user_data.getByKey(function(result){
+        response.send(result);
+    });
+});
+
 module.exports = router;
