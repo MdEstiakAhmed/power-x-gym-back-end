@@ -13,7 +13,7 @@ router.get('/getAllUser', function(request, response){
 });
 
 router.get('/getUser/:key', function(request, response){
-    user_data.getByKey(function(result){
+    user_data.getByKey(request.params.key, function(result){
         response.send(result);
     });
 });

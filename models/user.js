@@ -16,18 +16,16 @@ module.exports = {
             client.close();
         });
     },
-    getByKey:function(){
+    getByKey:function(userKey, callback){
         let client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
-        const key = req.params.key;   
-        console.log(key); 
         client.connect(err => {
             const collection = client.db("power-x-gym").collection("user");
-            collection.find({key}).toArray((err, documents)=>{
+            collection.find({key: userKey}).toArray((err, documents)=>{
                 if(err){
                     callback(err);
                 }
                 else{
-                    callback(documents[0]);
+                    callback(documents);
                 }
             });
             client.close();
