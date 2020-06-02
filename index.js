@@ -30,6 +30,7 @@ app.use('/testData', test);
 app.use('/', user);
 app.use('/getAllUser', user);
 app.use('/getUser/:key', user);
+app.use('/addUser', user);
 // middleware end
 
 

@@ -18,4 +18,10 @@ router.get('/getUser/:key', function(request, response){
     });
 });
 
+router.post('/addUser', function(request, response){
+    user_data.addUser(request.body, function(result){
+        response.send(result);
+    });
+});
+
 module.exports = router;
