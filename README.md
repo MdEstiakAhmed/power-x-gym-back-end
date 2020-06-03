@@ -3,8 +3,8 @@
 ## front-end part build with react.js.
 [project Live Link](https://power-x-gym-84424.web.app/)
 ### Project screenshot:
-![Project screenshot](https://ibb.co/DDJXKK5)
-![Project screenshot](https://ibb.co/L16m4V7)
-![Project screenshot](https://ibb.co/SnJpG9b)
-![Project screenshot](https://ibb.co/T22PBHK)
-![Project screenshot](https://ibb.co/kQKvZtW)
+![](https://i.ibb.co/6RMhssg/project.png)
+![](https://i.ibb.co/JH2VXDJ/plan.png)
+![](https://i.ibb.co/yyVJ7bt/user.png)
+![](https://i.ibb.co/yPPgn8h/payment.png)
+![](https://i.ibb.co/18Zjckw/purchase.png)
