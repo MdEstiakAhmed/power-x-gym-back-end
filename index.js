@@ -35,6 +35,7 @@ app.use('/addUser', user);
 app.use('/', order);
 app.use('/getOrderNo', order);
 app.use('/addPurchase', order);
+app.use('/updateOrderId', order);
 // middleware end
 
 

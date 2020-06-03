@@ -30,5 +30,15 @@ module.exports = {
             });
             client.close();
         });
+    },
+    updateOrderId:function(orderId, callback){
+        let client = new MongoClient(process.env.DB_PATH, { useNewUrlParser: true }, { useUnifiedTopology: true });
+        client.connect(err => {
+            console.log("object");
+            const collection = client.db("power-x-gym").collection("order_serial");
+            collection.updateOne({"key": 1}, {$set: { "order_no" : orderId}});
+            client.close();
+        });
     }
 }
+
