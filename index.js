@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 // declaration start
 var test = require('./controllers/testController/test');
 var user = require('./controllers/userController/user');
+var order = require('./controllers/orderController/order');
 // declaration end
 
 
@@ -31,6 +32,8 @@ app.use('/', user);
 app.use('/getAllUser', user);
 app.use('/getUser/:key', user);
 app.use('/addUser', user);
+app.use('/', order);
+app.use('/getOrderNo', order);
 // middleware end
 
 
