@@ -34,6 +34,7 @@ app.use('/getUser/:key', user);
 app.use('/addUser', user);
 app.use('/', order);
 app.use('/getOrderNo', order);
+app.use('/addPurchase', order);
 // middleware end
 
 
