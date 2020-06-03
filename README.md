@@ -2,9 +2,7 @@
 #### Back-end Part build with express.js.
 #### front-end part build with react.js.
 
-## [Front-end Gihub link](https://github.com/bhNibir/power-x-gym-front-end)
-## [Back-end Gihub link](https://github.com/MdEstiakAhmed/power-x-gym-back-end)
-## [project Live Link](https://power-x-gym-84424.web.app/)
+## [Front-end Gihub link](https://github.com/bhNibir/power-x-gym-front-end) || [Back-end Gihub link](https://github.com/MdEstiakAhmed/power-x-gym-back-end) || [project Live Link](https://power-x-gym-84424.web.app/)
 
 ## Process of Run Whole Project Locally:
 * Clone Front-end project
